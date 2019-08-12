@@ -2,8 +2,8 @@
 typedef char Element;
 #include<stdio.h>
 #include<stdlib.h>
-#include "../stack.h"
-#include "../queue.h"
+#include "../unit3/stack.h"
+#include "../unit3/queue.h"
 #include "utils.h"
 #define sIsE(s) stackIsEmpty(s)
 #define top(s) stackTop(s)

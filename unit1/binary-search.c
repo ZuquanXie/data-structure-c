@@ -74,21 +74,20 @@ ele search(const ele target, const ele table[], const ele count)
 
 ele primary_search(const ele target, const ele table[], const ele count)
 {
-	ele i, targetIndex;
+	ele i;
 
 	for(i = 0; i < count; i++)
 	{
 		if (table[i] == target)
 			return i;
 	}
-
-	return targetIndex;
 }
 
 ele binary_search(const ele target, const ele table[], const ele count)
 {
 	ele targetIndex, headerIndex, footerIndex, mediumIndex;
 
+	targetIndex = NULL;
 	headerIndex = 0;
 	footerIndex = table[count - 1];
 	mediumIndex = footerIndex / 2;
@@ -97,6 +96,7 @@ ele binary_search(const ele target, const ele table[], const ele count)
 	{
 		if(table[mediumIndex] == target)
 		{
+			targetIndex = mediumIndex;
 			return mediumIndex;
 		}
 		if(table[mediumIndex] > target)

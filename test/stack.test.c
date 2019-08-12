@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include "book.h"
-#include "../stack.h"
+#include "../unit3/stack.h"
 
 void showBooks(Stack stack);
 

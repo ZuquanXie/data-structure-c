@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<time.h>
 
-void timeUsage(unsigned long int n);
+void timeUsage(unsigned long int n, int deep);
 
 int main()
 {
@@ -10,13 +10,13 @@ int main()
 	printf("CLOCKS_PER_SEC: %li\n", CLOCKS_PER_SEC);
 	putchar('\n');
 	printf("%-18s%-20s\n", "number", "clocks");
-	timeUsage(10);
+	timeUsage(10, 0);
 	putchar('\n');
 
 	return 0;
 }
 
-void timeUsage(unsigned long int n)
+void timeUsage(unsigned long int n, int deep)
 {
 	clock_t a, b;
 	double result;
@@ -26,8 +26,9 @@ void timeUsage(unsigned long int n)
 	b = clock();
 	printf("%-16lu: %-20li\n", n, b - a);
 
-	if (n >= 1000000000000000)
+	if (deep >= 9) {
 		return;
+	}
 
-	timeUsage(n * 10);
+	timeUsage(n * 10, deep + 1);
 }
