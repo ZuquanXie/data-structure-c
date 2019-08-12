@@ -12,9 +12,10 @@ struct TreeNode {
 	PtrToTreeNode FirstChild;
 	PtrToTreeNode NextSibling;
 };
-Tree CreateTree(void);
-PtrToTreeNode TreeFind(Element ele);
+Tree CreateTree(Element ele);
+PtrToTreeNode TreeFind(Tree T, Element ele);
+PtrToTreeNode TreeFindPrev(Tree T, Element ele);
 void TreeEmpty(Tree T);
-void TreeInsert(Tree T, Element prentEle);
+void TreeInsert(Tree T, Element parentEle, Element ele);
 void TreeDelete(Tree T, Element ele);
 #endif
