@@ -8,7 +8,7 @@ Tree CreateTree(Element ele)
 
 	if (T == NULL)
 	{
-		printf("No memory\n");
+		fprintf(stderr, "out of memory\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -96,13 +96,13 @@ void TreeInsert(Tree T, Element parentEle, Element ele)
 	newNode = (PtrToTreeNode)malloc(sizeof(struct TreeNode));
 
 	if (parentNode == NULL) {
-		printf("Wrong tree parentEle");
+		fprintf(stderr, "wrong tree parentEle\n");
 		exit(EXIT_FAILURE);
 	}
 
 	if (newNode == NULL)
 	{
-		printf("No memory");
+		fprintf(stderr, "out of memory\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -131,7 +131,7 @@ void TreeDelete(Tree T, Element ele)
 	{
 		if (T->Element != ele)
 		{
-			printf("Wrong delete target");
+			fprintf(stderr, "wrong delete target\n");
 			exit(EXIT_FAILURE);
 		}
 		TreeEmpty(T);

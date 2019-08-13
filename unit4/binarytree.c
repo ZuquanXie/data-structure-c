@@ -88,12 +88,12 @@ void BinaryTreeInsertLeft(BinaryTree T, Element ele)
 	if (Left == NULL)
 	{
 		fprintf(stderr, "out of memory\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 
 	if (T->Left != NULL) {
 		fprintf(stderr, "wrong insert position\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 
 	Left->Left = NULL;
@@ -110,12 +110,12 @@ void BinaryTreeInsertRight(BinaryTree T, Element ele)
 	if (Right == NULL)
 	{
 		fprintf(stderr, "out of memory\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 
 	if (T->Right != NULL) {
 		fprintf(stderr, "wrong insert position\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 
 	Right->Left = NULL;
