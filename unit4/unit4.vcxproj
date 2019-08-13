@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tree.test.c" />
+    <ClCompile Include="binarytree.c" />
+    <ClCompile Include="binarytree.test.c" />
     <ClCompile Include="tree.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="binarytree.h" />
     <ClInclude Include="tree.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
