@@ -18,10 +18,13 @@
     <ClCompile Include="tree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="binarytree.test.c">
+    <ClCompile Include="binarytree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="binarytree.c">
+    <ClCompile Include="searchtree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="searchtree.test.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,6 +33,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="binarytree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="searchtree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

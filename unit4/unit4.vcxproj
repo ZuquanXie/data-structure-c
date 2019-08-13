@@ -20,11 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="binarytree.c" />
-    <ClCompile Include="binarytree.test.c" />
+    <ClCompile Include="searchtree.c" />
+    <ClCompile Include="searchtree.test.c" />
     <ClCompile Include="tree.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binarytree.h" />
+    <ClInclude Include="searchtree.h" />
     <ClInclude Include="tree.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
