@@ -18,25 +18,34 @@ int main()
 	TreeInsert(T, 6, 9);
 
 	ListTree(T, 0);
+
+	printf("6's prevNode: %i\n",  TreeFindPrev(T, 6)->Element);
+	printf("8's prevNode: %i\n",  TreeFindPrev(T, 8)->Element);
+	printf("10's prevNode is NULL: %i\n",  TreeFindPrev(T, 10) == NULL);
+
+	printf("delete node 6\n");
+	TreeDelete(T, 6);
+	ListTree(T, 0);
+
 	TreeEmpty(T);
 
 	return 0;
 }
 
-void ListTree(Tree T, int deep)
+void ListTree(Tree T, int depth)
 {
 	int i;
 	PtrToTreeNode target;
 
 	i = 0;
-	while (i++ < deep * 2)
+	while (i++ < depth * 2)
 		putchar('-');
 	printf("%i\n", T->Element);
 
 	target = T->FirstChild;
 	while (target != NULL)
 	{
-		ListTree(target, deep + 1);
+		ListTree(target, depth + 1);
 		target = target->NextSibling;
 	}
 }

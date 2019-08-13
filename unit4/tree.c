@@ -44,10 +44,18 @@ PtrToTreeNode TreeFindPrev(Tree T, Element ele)
 {
 	PtrToTreeNode target, result;
 
+	if (T->FirstChild && T->FirstChild->Element == ele)
+	{
+		return T;
+	}
+
+	if (T->NextSibling && T->NextSibling->Element == ele)
+	{
+		return T;
+	}
+
 	target = T->FirstChild;
 	result = NULL;
-	if (target->Element == ele)
-		return T;
 	while (target != NULL)
 	{
 		if (target->NextSibling && target->NextSibling->Element == ele)
@@ -60,19 +68,8 @@ PtrToTreeNode TreeFindPrev(Tree T, Element ele)
 			break;
 		target = target->NextSibling;
 	}
-	if (result != NULL)
-	{
-		return result;
-	}
 
-	if (T->NextSibling == NULL)
-	{
-		return NULL;
-	}
-	if (T->NextSibling->Element == ele)
-		return T;
-
-	return TreeFindPrev(T->NextSibling, ele);
+	return result;
 }
 
 void TreeEmpty(Tree T)
@@ -125,13 +122,14 @@ void TreeInsert(Tree T, Element parentEle, Element ele)
 
 void TreeDelete(Tree T, Element ele)
 {
-	PtrToTreeNode target, prev, parent;
+	PtrToTreeNode target, prev;
 
 	prev = TreeFindPrev(T, ele);
 
+	// prevNode is NULL, so T is root
 	if (prev == NULL)
 	{
-		if (T->Element == ele)
+		if (T->Element != ele)
 		{
 			printf("Wrong delete target");
 			exit(EXIT_FAILURE);
@@ -140,6 +138,7 @@ void TreeDelete(Tree T, Element ele)
 		return;
 	}
 
+	// prevNode is parent
 	if (prev->FirstChild && prev->FirstChild->Element == ele) {
 		target = prev->FirstChild;
 		prev->FirstChild = prev->FirstChild->NextSibling;
@@ -148,6 +147,7 @@ void TreeDelete(Tree T, Element ele)
 		return;
 	}
 
+	// prevNode is sibling
 	target = prev->NextSibling;
 	prev->NextSibling = prev->NextSibling->NextSibling;
 	target->NextSibling = NULL;
