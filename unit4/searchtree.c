@@ -31,6 +31,14 @@ void SearchTreeEmpty(SearchTree T)
 	free(T);
 }
 
+int SearchTreeIsLeaf(SearchTree T)
+{
+	if (T->Left == NULL && T->Right == NULL)
+		return 1;
+
+	return 0;
+}
+
 PtrToSearchTreeNode SearchTreeFind(SearchTree T, Element ele)
 {
 	PtrToSearchTreeNode target, result;
@@ -184,11 +192,15 @@ void SearchTreeInsert(SearchTree T, Element ele)
 SearchTree SearchTreeDelete(SearchTree T, Element ele)
 {
 	PtrToSearchTreeNode parent, target, max, mParent;
+	enum Position {Left, Right, None};
+	enum Position tPosition;
 
+	// find parent, target and target position
 	if (T->Element == ele)
 	{
 		parent = NULL;
 		target = T;
+		tPosition = None;
 	}
 	else
 	{
@@ -199,13 +211,45 @@ SearchTree SearchTreeDelete(SearchTree T, Element ele)
 			exit(EXIT_FAILURE);
 		}
 		target = SearchTreeFind(parent, ele);
+		if (parent->Left == target)
+			tPosition = Left;
+		else
+			tPosition = Right;
 	}
 
+	// target is leaf
+	if (SearchTreeIsLeaf(target))
+	{
+		if (tPosition == None)
+			T = NULL;
+		else if (tPosition == Left)
+			parent->Left = NULL;
+		else
+			parent->Right = NULL;
+		free(target);
+
+		return T;
+	}
+
+	// target has left child
+	if (target->Right == NULL)
+	{
+		if (tPosition == None)
+			T = target->Left;
+		else if (tPosition == Left)
+			parent->Left = target->Left;
+		else
+			parent->Right = target->Left;
+		free(target);
+		return T;
+	}
+
+	// target has right child
 	if (target->Left == NULL)
 	{
-		if (parent == NULL)
+		if (tPosition == None)
 			T = target->Right;
-		else if (parent->Left == target)
+		else if (tPosition == Left)
 			parent->Left = target->Right;
 		else
 			parent->Right = target->Right;
@@ -213,21 +257,18 @@ SearchTree SearchTreeDelete(SearchTree T, Element ele)
 		return T;
 	}
 
-	max = SearchTreeFindMax(target->Left);
+	// target has two child
+	max = SearchTreeFindMax(target->Right);
 	mParent = SearchTreeFindParent(target, max->Element);
-	if (parent == NULL)
+	if (tPosition == None)
 		T = max;
-	else if (parent->Left == target)
+	else if (tPosition == Left)
 		parent->Left = max;
 	else
 		parent->Right = max;
-
-	if (max != target->Left)
-		max->Left = target->Left;
-	else
-		mParent->Right = NULL;
+	mParent->Right = NULL;
+	max->Left = target->Left;
 	max->Right = target->Right;
 	free(target);
-
 	return T;
 }

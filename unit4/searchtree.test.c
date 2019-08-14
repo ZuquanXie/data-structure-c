@@ -5,7 +5,9 @@ void ListSearchTree(SearchTree T, int depth);
 
 int main()
 {
-	SearchTree T = CreateSearchTree(3);
+	SearchTree T;
+
+	T = CreateSearchTree(3);
 	SearchTreeInsert(T, 2);
 	SearchTreeInsert(T, 1);
 	SearchTreeInsert(T, 6);
