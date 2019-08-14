@@ -15,15 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hashtable.test.c">
+    <ClCompile Include="sephashtable.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hash.c">
+    <ClCompile Include="sephashtable.test.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sephashtable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
