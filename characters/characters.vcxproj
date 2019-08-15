@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{F52B13F1-72EB-4F98-97FC-4F341845D3F6}</ProjectGuid>
-    <RootNamespace>unit5</RootNamespace>
+    <ProjectGuid>{667DE678-D60A-4A2A-BB16-EAF7119CC7ED}</ProjectGuid>
+    <RootNamespace>characters</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,11 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="openaddrhash.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="openaddrhash.c" />
-    <ClCompile Include="openaddrhash.test.c" />
+    <ClCompile Include="windows.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

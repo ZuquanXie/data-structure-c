@@ -15,15 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="openaddrhash.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="openaddrhash.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="openaddrhash.test.c">
+    <ClCompile Include="windows.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
