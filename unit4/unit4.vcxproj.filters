@@ -15,27 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tree.c">
+    <ClCompile Include="btree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="binarytree.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="searchtree.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="searchtree.test.c">
+    <ClCompile Include="btree.test.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="binarytree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="searchtree.h">
+    <ClInclude Include="btree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -19,15 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="binarytree.c" />
-    <ClCompile Include="searchtree.c" />
-    <ClCompile Include="searchtree.test.c" />
-    <ClCompile Include="tree.c" />
+    <ClCompile Include="btree.c" />
+    <ClCompile Include="btree.test.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="binarytree.h" />
-    <ClInclude Include="searchtree.h" />
-    <ClInclude Include="tree.h" />
+    <ClInclude Include="btree.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
